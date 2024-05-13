@@ -11,6 +11,7 @@ static const String routeName = 'Shop';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: ShopCategories(),
     );
 

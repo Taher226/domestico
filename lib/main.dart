@@ -6,6 +6,7 @@ import 'package:domestico/shop/accessories_screen.dart';
 import 'package:domestico/shop/cart_screen.dart';
 import 'package:domestico/shop/food_screen.dart';
 import 'package:domestico/shop/iot_devices_screen.dart';
+import 'package:domestico/shop/item_details.dart';
 import 'package:domestico/shop/vet_items_screen.dart';
 import 'package:flutter/material.dart';
 //import 'package:domestico/profile/ownerProfile.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
       'OwnerProfileScreen' : (context) => OwnerProfileScreen(),
       'WalkerProfileScreen' : (context) => WalkerProfileScreen(),
       'CartScreen' :(context) => CartScreen(),
+      'ItemDetails' :(context)=> ItemDetails(),
 
     },
     );
