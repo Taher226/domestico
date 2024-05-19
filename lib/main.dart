@@ -1,4 +1,7 @@
 import 'package:domestico/Home/home_screen.dart';
+import 'package:domestico/booking/add_review.dart';
+import 'package:domestico/booking/reviews_screen.dart';
+import 'package:domestico/favourite/favourite_screen.dart';
 import 'package:domestico/profile/owner_profile_screen.dart';
 import 'package:domestico/profile/walker_profile_screen.dart';
 import 'package:domestico/shop/Shop.dart';
@@ -7,6 +10,7 @@ import 'package:domestico/shop/cart_screen.dart';
 import 'package:domestico/shop/food_screen.dart';
 import 'package:domestico/shop/iot_devices_screen.dart';
 import 'package:domestico/shop/item_details.dart';
+import 'package:domestico/shop/payment_screen.dart';
 import 'package:domestico/shop/vet_items_screen.dart';
 import 'package:flutter/material.dart';
 //import 'package:domestico/profile/ownerProfile.dart';
@@ -18,12 +22,11 @@ void main() {
 class MyApp extends StatelessWidget {
 
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: 'HomeScreen',
+    initialRoute: 'ReviewsScreen',
     routes: {
         'HomeScreen' :(context) => HomeScreen(),
         'AccessoriesScreen' :(context) => AccessoriesScreen(),
@@ -35,7 +38,10 @@ class MyApp extends StatelessWidget {
       'WalkerProfileScreen' : (context) => WalkerProfileScreen(),
       'CartScreen' :(context) => CartScreen(),
       'ItemDetails' :(context)=> ItemDetails(),
-
+      'FavouriteScreen' :(context) => FavouriteScreen(),
+      'PaymentScreen' :(context)=> PaymentScreen(),
+      'AddReviewScreen' :(context)=> AddReview(),
+      'ReviewsScreen' :(context)=> ReviewsScreen(),
     },
     );
   }

@@ -1,3 +1,4 @@
+
 import 'package:domestico/my_theme.dart';
 import 'package:domestico/shop/cart_screen.dart';
 import 'package:flutter/material.dart';
@@ -31,14 +32,38 @@ class _ItemDetailsState extends State<ItemDetails> {
       });
     }
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 247, 245, 245),
+        backgroundColor: const Color.fromARGB(255, 247, 245, 245),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(80.0),
+          child: AppBar(
+            backgroundColor: MyTheme.primaryLight,
+            leading: Builder(
+              builder: (context){
+                return IconButton(
+                  onPressed: (){
+                    Navigator.of(context).pop();
+                  },
+                  icon: Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Icon(Icons.arrow_back_ios_rounded,color: MyTheme.whiteColor,),
+                  ),
+                );
+              },
+            ),
+            title: Padding(
+              padding: const EdgeInsets.only(top:30.0),
+              child: Text('Details',style: MyTheme.lightTheme.textTheme.titleLarge,),
+            ),
+            centerTitle: true,
+          ),
+        ),
         body: SingleChildScrollView(
           child: Container(
             color: const Color.fromARGB(255, 247, 245, 245),
             child: Column(
                 children:[
               Container(
-                height: 260,
+                height: 210,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -109,20 +134,10 @@ class _ItemDetailsState extends State<ItemDetails> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                            RatingBar.builder(
-                            initialRating: 2.5,
-                            minRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                            itemBuilder: (context, _) => Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                            ),
-                            onRatingUpdate: (rating) {
-                              print(rating);
-                            },
+                            RatingBarIndicator(
+                                rating: 2.5,
+                                itemSize: 25,
+                                itemBuilder: (_,__) => Icon(Icons.star,color: Colors.amber,)
                           )
                               ],
                             ),

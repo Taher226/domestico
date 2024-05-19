@@ -1,8 +1,11 @@
+import 'package:domestico/favourite/favourite_screen.dart';
 import 'package:domestico/my_theme.dart';
 import 'package:domestico/profile/owner_profile_screen.dart';
 import 'package:domestico/profile/walker_profile_screen.dart';
 import 'package:domestico/shop/Shop.dart';
 import 'package:domestico/shop/cart_screen.dart';
+import 'package:domestico/shop/item_details.dart';
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -346,25 +349,43 @@ class _BottomNavigationBarExampleState
                 child: ListView.builder(itemBuilder: (context, index) =>
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Material(
-                        elevation: 5,
-                        //shadowColor: Colors.black45,
-                        child: Container(
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context,new MaterialPageRoute(
+                            builder: (context)=> new ItemDetails(),
+                          ));
+                        },
+                        child: Material(
+                          elevation: 5,
+                          //shadowColor: Colors.black45,
+                          child: Container(
 
-                          decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            //shape: BoxShape.rectangle,
-                            //color: Colors.pink,
-                            //color: Colors.black12,
-                            border: Border.all(width:3,color: Colors.transparent),
-                          ),
-                          child: Column(
-                            children: [
-                              Expanded(child: Image.asset('assets/images/item.png')),
-                              Text('price',style: TextStyle(fontSize: 15,color: MyTheme.primaryLight),),
-                              Text('Item 1',style: TextStyle(fontSize: 20),)
+                            decoration:BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              //shape: BoxShape.rectangle,
+                              //color: Colors.pink,
+                              //color: Colors.black12,
+                              border: Border.all(width:3,color: Colors.transparent),
+                            ),
+                            child: Column(
+                              children: [
+                                Expanded(child: Container(
+                                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+                                    child: Image.asset('assets/images/item.png'))),
+                                Row(
+                                  children: [
+                                    Text('price',style: TextStyle(fontSize: 15,color: MyTheme.primaryLight),),
+                                    SizedBox(width: 20,),
+                                    FavoriteButton(
+                                      valueChanged: (_) {},
+                                      iconSize: 40,
+                                    ),
+                                  ],
+                                ),
+                                Text('Item 1',style: TextStyle(fontSize: 20),)
 
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -400,7 +421,18 @@ class _BottomNavigationBarExampleState
                           child: Column(
                             children: [
                               Image.asset('assets/images/img.png'),
-                              Text('2.5 km',style: TextStyle(fontSize: 15,color: MyTheme.primaryLight),),
+                              SizedBox(height: 10,),
+                              Row(
+                                children: [
+                                  Text('2.5 km',style: TextStyle(fontSize: 15,color: MyTheme.primaryLight),),
+                                  SizedBox(width: 20,),
+                                  FavoriteButton(
+                                    valueChanged: (_) {},
+                                    iconSize: 40,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10,),
                               Text('5.0(100 Reviews)',style: TextStyle(fontSize: 20),)
                             ],
                           ),
@@ -422,10 +454,7 @@ class _BottomNavigationBarExampleState
       'Index 2: booking',
       style: optionStyle,
     ),
-    Text(
-      'Index 3: favourite',
-      style: optionStyle,
-    ),
+    FavouriteScreen(),
     OwnerProfileScreen(),
 //WalkerProfileScreen(),
   ];

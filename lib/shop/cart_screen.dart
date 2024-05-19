@@ -4,11 +4,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
 static const String routeName = 'CartScreen';
 
   @override
+  State<CartScreen> createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+  int _counter = 0;
+  @override
   Widget build(BuildContext context) {
+
+    void _incrementCounter() {
+      setState(() {
+
+        _counter++;
+      });
+    }
+    void _minusCounter() {
+      setState(() {
+
+        _counter--;
+      });
+    }
+
     return Scaffold(
 appBar: AppBar(
   backgroundColor: MyTheme.primaryLight,
@@ -62,7 +82,7 @@ appBar: AppBar(
                          padding: EdgeInsets.all(6),
                          decoration: BoxDecoration(
                            color: Colors.white,
-                       
+
                            borderRadius: BorderRadius.circular(15),
                          ),
                          child:Row(
@@ -76,18 +96,18 @@ appBar: AppBar(
                          Column(
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: [
-                             Text('Price',style: TextStyle(color: MyTheme.primaryLight,fontSize: 10),),
+                             Text('Price',style: TextStyle(color: MyTheme.primaryLight,fontSize: 15),),
                              Text('Item Name',style: TextStyle(fontSize: 20)),
-                             Text('Weight',style: TextStyle(color: Colors.grey,fontSize: 10),),
+                             Text('Weight',style: TextStyle(color: Colors.grey,fontSize: 12),),
                            ],
                          ),
                              SizedBox(width: 130,),
                              Column(
                               // crossAxisAlignment: CrossAxisAlignment.end,
                                children: [
-                                 IconButton(onPressed: (){}, icon: Icon(Icons.add,color: MyTheme.primaryLight,)),
-                                 Text('1',style: TextStyle(color: Colors.grey),),
-                                 IconButton(onPressed: (){}, icon: Icon(Icons.minimize,color: MyTheme.primaryLight,)),
+                                 IconButton(onPressed: _incrementCounter, icon: Icon(Icons.add,color: MyTheme.primaryLight,)),
+                                 Text('$_counter',style: TextStyle(color: MyTheme.blackColor,fontSize: 18),),
+                                 IconButton(onPressed: _minusCounter, icon: Icon(Icons.minimize,color: MyTheme.primaryLight,)),
                                ],
                              ),
                            ],
