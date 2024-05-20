@@ -1,3 +1,4 @@
+import 'package:domestico/profile/myPets.dart';
 import 'package:domestico/shop/cart_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -220,7 +221,12 @@ class _OwnerProfileScreenState extends State<OwnerProfileScreen> {
                         ),
                       ),
                       MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+
+                          Navigator.push(context,new MaterialPageRoute(
+                            builder: (context)=> new MyPets(),
+                          ));
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

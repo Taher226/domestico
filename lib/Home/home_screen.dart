@@ -539,6 +539,12 @@ class _BottomNavigationBarExampleState
                     ),
                     SizedBox(width: 20,),
                     Text('Theme Mode',style: MyTheme.lightTheme.textTheme.titleSmall,),
+                    SizedBox(width: 70,),
+                    Switch(value: true, onChanged: (bool newVal){
+                      return setState(() {
+                        newVal = true;
+                      });
+                    }),
                   ]
               ),
             ),

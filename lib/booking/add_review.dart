@@ -86,14 +86,18 @@ static const String routeName = 'AddReviewScreen';
               ],
             ),
             SizedBox(height: 50,),
-            TextField(
-              minLines: 4,
-              maxLines: 6,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Describe your experience',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                minLines: 4,
+                maxLines: 6,
+                decoration: InputDecoration(
+
+                  border: OutlineInputBorder(),
+                  hintText: 'Describe your experience',
+                ),
+
               ),
-        
             ),
             SizedBox(height: 70,),
             /*MaterialButton(

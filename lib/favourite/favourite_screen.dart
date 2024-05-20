@@ -73,8 +73,9 @@ class FavouriteScreen extends StatelessWidget {
                                 children: [
                                   Text('price',style: TextStyle(fontSize: 15,color: MyTheme.primaryLight),),
                                   SizedBox(width: 20,),
+                                  //Icon(Icons.favorite,color: Colors.red,)
                                   FavoriteButton(
-                                    valueChanged: (_) {},
+                                    valueChanged: () {},
                                     iconSize: 40,
                                   ),
                                 ],

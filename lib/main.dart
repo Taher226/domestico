@@ -2,6 +2,9 @@ import 'package:domestico/Home/home_screen.dart';
 import 'package:domestico/booking/add_review.dart';
 import 'package:domestico/booking/reviews_screen.dart';
 import 'package:domestico/favourite/favourite_screen.dart';
+import 'package:domestico/profile/aboutPet.dart';
+import 'package:domestico/profile/addPet.dart';
+import 'package:domestico/profile/myPets.dart';
 import 'package:domestico/profile/owner_profile_screen.dart';
 import 'package:domestico/profile/walker_profile_screen.dart';
 import 'package:domestico/shop/Shop.dart';
@@ -26,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: 'ReviewsScreen',
+    initialRoute: 'HomeScreen',
     routes: {
         'HomeScreen' :(context) => HomeScreen(),
         'AccessoriesScreen' :(context) => AccessoriesScreen(),
@@ -42,6 +45,9 @@ class MyApp extends StatelessWidget {
       'PaymentScreen' :(context)=> PaymentScreen(),
       'AddReviewScreen' :(context)=> AddReview(),
       'ReviewsScreen' :(context)=> ReviewsScreen(),
+      'AboutPet' :(context)=> AboutPet(name: 'a', pic: 'b', breed: 'c', gender: 'd'),
+      'AddPet' :(context)=> AddPet(),
+      'MyPets' :(context)=> MyPets(),
     },
     );
   }
