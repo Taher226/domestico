@@ -1,4 +1,5 @@
 import 'package:domestico/Home/SittersHome.dart';
+import 'package:domestico/booking/reviews_screen.dart';
 import 'package:domestico/my_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -110,7 +111,10 @@ static const String routeName = 'AddReviewScreen';
             ),*/
             ElevatedButton(
                 onPressed: (){
-                  Navigator.of(context).pushNamed('ReviewsScreen');
+                  Navigator.push(context,new MaterialPageRoute(
+                    builder: (context)=> new ReviewsScreen(),
+                  ));
+                  // Navigator.of(context).pushNamed('ReviewsScreen');
                 },
               style: TextButton.styleFrom(
             backgroundColor: MyTheme.primaryLight,

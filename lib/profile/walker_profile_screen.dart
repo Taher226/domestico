@@ -1,3 +1,5 @@
+import 'package:domestico/booking/reviews_screen.dart';
+import 'package:domestico/login&register/Login_screen.dart';
 import 'package:flutter/material.dart';
 
 class WalkerProfileScreen extends StatefulWidget {
@@ -59,7 +61,11 @@ class _WalkerProfileScreenState extends State<WalkerProfileScreen> {
                                 children: [
                                   Text("Walker/Sitter Name",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
                                   MaterialButton(
-                                    onPressed: () { },
+                                    onPressed: () {
+                                      Navigator.push(context,new MaterialPageRoute(
+                                        builder: (context)=> new LoginScreen(),
+                                      ));
+                                    },
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
@@ -152,7 +158,11 @@ class _WalkerProfileScreenState extends State<WalkerProfileScreen> {
                                 ),
                               ),
                               MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(context,new MaterialPageRoute(
+                                    builder: (context)=> new ReviewsScreen(),
+                                  ));
+                                },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [

@@ -1,7 +1,15 @@
 import 'package:domestico/Home/home_screen.dart';
 import 'package:domestico/booking/add_review.dart';
+import 'package:domestico/booking/calendar_screen.dart';
 import 'package:domestico/booking/reviews_screen.dart';
+import 'package:domestico/booking/sitter_details.dart';
+import 'package:domestico/booking/sitter_list.dart';
 import 'package:domestico/favourite/favourite_screen.dart';
+import 'package:domestico/login&register/Account_Type.dart';
+import 'package:domestico/login&register/Login_screen.dart';
+import 'package:domestico/login&register/Register_screen.dart';
+import 'package:domestico/login&register/Sitter_register.dart';
+import 'package:domestico/login&register/Splash_screen.dart';
 import 'package:domestico/profile/aboutPet.dart';
 import 'package:domestico/profile/addPet.dart';
 import 'package:domestico/profile/myPets.dart';
@@ -16,9 +24,12 @@ import 'package:domestico/shop/item_details.dart';
 import 'package:domestico/shop/payment_screen.dart';
 import 'package:domestico/shop/vet_items_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 //import 'package:domestico/profile/ownerProfile.dart';
 
-void main() {
+void main() async{
+
   runApp(MyApp());
 }
 
@@ -29,7 +40,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: 'HomeScreen',
+    initialRoute: 'LoginScreen',
     routes: {
         'HomeScreen' :(context) => HomeScreen(),
         'AccessoriesScreen' :(context) => AccessoriesScreen(),
@@ -48,6 +59,14 @@ class MyApp extends StatelessWidget {
       'AboutPet' :(context)=> AboutPet(name: 'a', pic: 'b', breed: 'c', gender: 'd'),
       'AddPet' :(context)=> AddPet(),
       'MyPets' :(context)=> MyPets(),
+      'AccType' : (context)=> AccountType(),
+      'LoginScreen' : (context)=> LoginScreen(),
+      'RegisterScreen' : (context)=> RegisterScreen(),
+      'SplashScreen' : (context)=> SplashScreen(),
+      'SitterRegister':(context)=>SitterRegister(),
+      'CalenderScreen' :(context)=> CalendarScreen(),
+      'SitterScreen':(context)=> SitterScreen(),
+      'SitterDetails':(context)=> SitterDetails(),
     },
     );
   }

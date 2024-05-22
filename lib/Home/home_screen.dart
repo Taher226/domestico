@@ -1,4 +1,6 @@
+import 'package:domestico/booking/sitter_list.dart';
 import 'package:domestico/favourite/favourite_screen.dart';
+import 'package:domestico/login&register/Login_screen.dart';
 import 'package:domestico/my_theme.dart';
 import 'package:domestico/profile/owner_profile_screen.dart';
 import 'package:domestico/profile/walker_profile_screen.dart';
@@ -433,7 +435,14 @@ class _BottomNavigationBarExampleState
                                 ],
                               ),
                               SizedBox(height: 10,),
-                              Text('5.0(100 Reviews)',style: TextStyle(fontSize: 20),)
+                              Row(
+                                children: [
+                                  Text('5.0',style: TextStyle(fontSize: 20),),
+                                  SizedBox(width: 5,),
+                                  Text('(100 Reviews)',style: TextStyle(fontSize: 20),)
+                                ],
+                              )
+
                             ],
                           ),
                         ),
@@ -450,10 +459,7 @@ class _BottomNavigationBarExampleState
           ),
     ),
     Shop(),
-    Text(
-      'Index 2: booking',
-      style: optionStyle,
-    ),
+    SitterScreen(),
     FavouriteScreen(),
     OwnerProfileScreen(),
 //WalkerProfileScreen(),
@@ -627,7 +633,11 @@ class _BottomNavigationBarExampleState
             SizedBox(height: 70,),
             InkWell(
 
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context,new MaterialPageRoute(
+                  builder: (context)=> new LoginScreen(),
+                ));
+              },
               child: Center(
                 child: Text(
                   'Log Out',

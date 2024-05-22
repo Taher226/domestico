@@ -1,8 +1,15 @@
 import 'package:domestico/my_theme.dart';
 import 'package:flutter/material.dart';
 
-class PaymentScreen extends StatelessWidget {
+
+class PaymentScreen extends StatefulWidget {
 static const String routeName = 'PaymentScreen';
+
+  @override
+  State<PaymentScreen> createState() => _PaymentScreenState();
+}
+
+class _PaymentScreenState extends State<PaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +38,15 @@ static const String routeName = 'PaymentScreen';
           centerTitle: true,
         ),
       ),
-      
+
+
     );
+
+
+
+
+
 
   }
 }
+

@@ -150,7 +150,30 @@ appBar: AppBar(
                   style: TextButton.styleFrom(
                     backgroundColor: MyTheme.primaryLight,
                   ),
-                    onPressed: (){},
+                    onPressed: (){
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                            height: 200,
+                            color: Colors.amber,
+                            child: Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  const Text('Modal BottomSheet'),
+                                  ElevatedButton(
+                                    child: const Text('Close BottomSheet'),
+                                    onPressed: () => Navigator.pop(context),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                    );
+                    },
                     child: Text('Checkout',style: TextStyle(color:MyTheme.whiteColor),),
                 ),
               ),

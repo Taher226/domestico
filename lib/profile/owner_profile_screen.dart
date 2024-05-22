@@ -1,3 +1,4 @@
+import 'package:domestico/login&register/Login_screen.dart';
 import 'package:domestico/profile/myPets.dart';
 import 'package:domestico/shop/cart_screen.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,11 @@ class _OwnerProfileScreenState extends State<OwnerProfileScreen> {
                                 fontSize: 25, fontWeight: FontWeight.bold),
                           ),
                           MaterialButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context,new MaterialPageRoute(
+                                builder: (context)=> new LoginScreen(),
+                              ));
+                            },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
