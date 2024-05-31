@@ -1,9 +1,13 @@
 import 'package:domestico/Home/home_screen.dart';
 import 'package:domestico/booking/add_review.dart';
 import 'package:domestico/booking/calendar_screen.dart';
+import 'package:domestico/booking/request_sent.dart';
 import 'package:domestico/booking/reviews_screen.dart';
 import 'package:domestico/booking/sitter_details.dart';
 import 'package:domestico/booking/sitter_list.dart';
+import 'package:domestico/drawer/about_app.dart';
+import 'package:domestico/drawer/contact_submitted.dart';
+import 'package:domestico/drawer/contact_us.dart';
 import 'package:domestico/favourite/favourite_screen.dart';
 import 'package:domestico/login&register/Account_Type.dart';
 import 'package:domestico/login&register/Login_screen.dart';
@@ -26,10 +30,12 @@ import 'package:domestico/shop/vet_items_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+
 //import 'package:domestico/profile/ownerProfile.dart';
 
 void main() async{
-
+  //WidgetsFlutterBinding.ensureInitialized();
+  //Stripe.publishableKey = 'your_publishable_key';
   runApp(MyApp());
 }
 
@@ -53,7 +59,6 @@ class MyApp extends StatelessWidget {
       'CartScreen' :(context) => CartScreen(),
       'ItemDetails' :(context)=> ItemDetails(),
       'FavouriteScreen' :(context) => FavouriteScreen(),
-      'PaymentScreen' :(context)=> PaymentScreen(),
       'AddReviewScreen' :(context)=> AddReview(),
       'ReviewsScreen' :(context)=> ReviewsScreen(),
       'AboutPet' :(context)=> AboutPet(name: 'a', pic: 'b', breed: 'c', gender: 'd'),
@@ -65,8 +70,13 @@ class MyApp extends StatelessWidget {
       'SplashScreen' : (context)=> SplashScreen(),
       'SitterRegister':(context)=>SitterRegister(),
       'CalenderScreen' :(context)=> CalendarScreen(),
+      'RequestSent':(context)=>RequestSent(),
       'SitterScreen':(context)=> SitterScreen(),
       'SitterDetails':(context)=> SitterDetails(),
+      'PaymentScreen':(context)=> PaymentScreen(),
+      'ContactUs':(context)=> ContactUs(),
+      'ContactSubmitted':(context)=> ContactSubmitted(),
+      'AboutApp':(context)=>AboutApp(),
     },
     );
   }

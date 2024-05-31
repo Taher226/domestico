@@ -1,8 +1,9 @@
-import 'package:domestico/my_theme.dart';
 import 'package:flutter/material.dart';
 
-class PaymentScreen extends StatelessWidget {
-  static const String routeName = 'PaymentScreen';
+import '../my_theme.dart';
+
+class ContactSubmitted extends StatelessWidget {
+static const String routeName = 'ContactSubmitted';
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class PaymentScreen extends StatelessWidget {
                   Navigator.of(context).pop();
                 },
                 icon: Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: 20.0),
                   child: Icon(Icons.arrow_back_ios_rounded,color: MyTheme.whiteColor,),
                 ),
               );
@@ -26,18 +27,22 @@ class PaymentScreen extends StatelessWidget {
           ),
           title: Padding(
             padding: const EdgeInsets.only(top:30.0),
-            child: Text('Payment',style: MyTheme.lightTheme.textTheme.titleLarge,),
+            child: Text('Contact Us',style: MyTheme.lightTheme.textTheme.titleLarge,),
           ),
           centerTitle: true,
+
         ),
       ),
-     /* body: Column(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-        CircularProgressIndicator(
-          
-        )
+          Icon(Icons.check_circle_outline_outlined,color: Colors.green,size: 100,),
+          SizedBox(height: 30,),
+          Center(child: Text('Your Suggestion Submitted Successfully',style: MyTheme.lightTheme.textTheme.titleMedium,)),
+          SizedBox(height: 20,),
+          Center(child: Text('We will respond to you as soon as possible',style: MyTheme.lightTheme.textTheme.titleSmall,)),
         ],
-      ),*/
+      ),
 
     );
   }

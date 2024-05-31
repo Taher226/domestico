@@ -1,3 +1,4 @@
+import 'package:domestico/booking/request_sent.dart';
 import 'package:domestico/my_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -181,7 +182,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 height: 40,
                 minWidth: 170,
                 color: MyTheme.primaryLight,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,new MaterialPageRoute(
+                    builder: (context)=> new RequestSent(),
+                  ));
+                },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),

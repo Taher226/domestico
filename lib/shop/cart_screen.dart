@@ -1,4 +1,5 @@
 import 'package:domestico/my_theme.dart';
+import 'package:domestico/shop/payment_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -151,7 +152,7 @@ appBar: AppBar(
                     backgroundColor: MyTheme.primaryLight,
                   ),
                     onPressed: (){
-                    showModalBottomSheet(
+                    /*showModalBottomSheet(
                         context: context,
                         builder: (BuildContext context) {
                           return Container(
@@ -172,7 +173,10 @@ appBar: AppBar(
                             ),
                           );
                         },
-                    );
+                    );*/
+                      Navigator.push(context,new MaterialPageRoute(
+                        builder: (context)=> new PaymentScreen(),
+                      ));
                     },
                     child: Text('Checkout',style: TextStyle(color:MyTheme.whiteColor),),
                 ),

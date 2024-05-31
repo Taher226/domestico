@@ -1,4 +1,6 @@
 import 'package:domestico/booking/sitter_list.dart';
+import 'package:domestico/drawer/about_app.dart';
+import 'package:domestico/drawer/contact_us.dart';
 import 'package:domestico/favourite/favourite_screen.dart';
 import 'package:domestico/login&register/Login_screen.dart';
 import 'package:domestico/my_theme.dart';
@@ -602,7 +604,11 @@ class _BottomNavigationBarExampleState
             ),
             SizedBox(height: 50,),
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context,new MaterialPageRoute(
+                  builder: (context)=> new ContactUs(),
+                ));
+              },
               child: Row(
                   children:[
                     Padding(
@@ -610,14 +616,18 @@ class _BottomNavigationBarExampleState
                       child: Icon(Icons.support_agent),
                     ),
                     SizedBox(width: 20,),
-                    Text('Support Center',style: MyTheme.lightTheme.textTheme.titleSmall,),
+                    Text('Contact Us',style: MyTheme.lightTheme.textTheme.titleSmall,),
                   ]
               ),
             ),
 
             SizedBox(height: 50,),
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context,new MaterialPageRoute(
+                  builder: (context)=> new AboutApp(),
+                ));
+              },
               child: Row(
                   children:[
                     Padding(
