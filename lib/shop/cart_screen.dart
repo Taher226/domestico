@@ -175,7 +175,7 @@ appBar: AppBar(
                         },
                     );*/
                       Navigator.push(context,new MaterialPageRoute(
-                        builder: (context)=> new PaymentScreen(),
+                        builder: (context)=> new PaymentScreen( ),
                       ));
                     },
                     child: Text('Checkout',style: TextStyle(color:MyTheme.whiteColor),),

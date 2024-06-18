@@ -8,7 +8,11 @@ class Shop extends StatefulWidget {
 }
 
 class _ShopState extends State<Shop> {
-  List<bool> widgetVisibility = [false, false, false, false];
+  List<bool> widgetVisibility = [true, false, false, false];
+  List<String> images =['assets/images/fff.jpeg',
+    'assets/images/gg.jpeg'
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +93,7 @@ class _ShopState extends State<Shop> {
             setState(() {
               widgetVisibility =
                   List.generate(widgetVisibility.length, (i) => i == index);
+
             });
           },
           child: Image.asset(imagePath, width: 20, height: 20),
@@ -126,7 +131,7 @@ class _ShopState extends State<Shop> {
                       ),
                       child: Column(
                         children: [
-                          Image.asset('assets/images/food.png',width: 120,height: 120,),
+                          Image.asset(images.first,width: 120,height: 120,),
 
                           Text(
                             'Price',
